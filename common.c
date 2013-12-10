@@ -19,3 +19,40 @@ u16int inw(u16int port)
   return ret;
 }
 
+void * memset(void * s, u8int c, u32int n)
+{
+  u32int i;
+  u8int * ptr = s;
+
+  for ( i = 0; i < n; i++, ptr++)
+  {
+    *ptr = c;
+  }
+  return s;
+}
+
+void * memset_16bit(void * s, u16int c, u32int n)
+{
+  u32int i;
+  u16int * ptr = s;
+
+  for ( i = 0; i < n; i++, ptr++)
+  {
+    *ptr = c;
+  }
+  return s;
+}
+
+void * memset_32bit(void * s, u32int c, u32int n)
+{
+  u32int i;
+  u32int * ptr = s;
+
+  for ( i = 0; i < n; i++, ptr++)
+  {
+    *ptr = c;
+  }
+  return s;
+}
+
+

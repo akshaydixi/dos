@@ -11,5 +11,7 @@ typedef char s8int;
 void outb(u16int port, u8int value);
 u8int inb(u16int port);
 u16int inw(u16int port);
-
+void* memset(void* s,u8int c,u32int n);
+void* memset_16bit(void* s,u16int c,u32int n);
+void* memset_32bit(void* s,u32int c,u32int n);
 #endif  //COMMON_H
