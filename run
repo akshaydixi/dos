@@ -1,0 +1,4 @@
+make clean
+make
+bash update_image.sh
+bash run_bochs.sh
