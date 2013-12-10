@@ -115,10 +115,31 @@ void monitor_write_hex (u32int n)
       dig=dig+55;
     }
     n=n/16;
-    hex[pos] = dig;
-    pos--;
+    hex[pos--] = dig;
   }
   monitor_write(hex);
+}
+
+void monitor_write_dec (u32int n)
+{
+  char *dec = "0000000000";
+  int pos = 0;
+  int start = 0;
+  while(n>0)
+  {
+    int dig = n%10 + 48;
+    n = n/10;
+    dec[pos++] = dig;
+  }
+  dec[pos]='\0';
+  for(pos=pos-1;start<pos;start++,pos--)
+  {
+    char temp = dec[pos];
+    dec[pos] = dec[start];
+    dec[start] = temp;
+  }
+
+  monitor_write(dec);
 }
 
 
