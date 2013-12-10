@@ -100,4 +100,25 @@ void monitor_write (char *c)
   }
 }
 
+void monitor_write_hex (u32int n)
+{
+  char *hex = "0x00000000";
+  int pos=9;
+  while(n>0){
+    int dig = n%16;
+    if(dig <= 9)
+    {
+      dig = dig + 48;
+    }
+    else
+    {
+      dig=dig+55;
+    }
+    n=n/16;
+    hex[pos] = dig;
+    pos--;
+  }
+  monitor_write(hex);
+}
+
 
