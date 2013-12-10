@@ -55,4 +55,14 @@ void * memset_32bit(void * s, u32int c, u32int n)
   return s;
 }
 
+void * memcpy(void * dest, void * src, u32int n)
+{
+  u8int * d = (u8int*)dest;
+  u8int * s = (u8int*)src;
+  while(n--)
+  {
+    *d++ = *s++;
+  }
+  return dest;
+}
 

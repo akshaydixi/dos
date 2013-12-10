@@ -12,6 +12,6 @@ int main(struct multiboot *mboot_ptr)
   monitor_write_hex(255);
   monitor_write("\r");
   monitor_write_dec(255);
-   
+  memcpy(0xB8000,0xB80F0,8); 
   return 0;
 }
